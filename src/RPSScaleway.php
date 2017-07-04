@@ -1,6 +1,6 @@
 <?php
 
-namespace rpsimao\ScalewayRPS;
+namespace rpsimao\RPSScaleway;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;

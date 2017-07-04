@@ -1,6 +1,6 @@
 <?php
 
-namespace rpsimao\ScalewayRPS;
+namespace rpsimao\RPSScaleway;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -32,7 +32,7 @@ class RPSScalewayServiceProvider extends ServiceProvider
 	    $this->app->singleton(RPSScaleway::class, function () {
 		    return new RPSScaleway(config('services.scaleway.token'));
 	    });
-	    $this->app->alias(RPSScaleway::class, 'scaleway');
+	    $this->app->alias(RPSScaleway::class, 'Scaleway');
 
 
     }
@@ -44,7 +44,7 @@ class RPSScalewayServiceProvider extends ServiceProvider
      */
     public function provides()
     {
-        return [RPSScaleway::class, 'scaleway'];
+        return [RPSScaleway::class, 'Scaleway'];
 	    //return ['scaleway'];
     }
 
