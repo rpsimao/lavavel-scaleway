@@ -26,8 +26,10 @@ class Scaleway  {
 
    }
 
-
-   public function setLocation($location)
+	/**
+	 * @param string $location
+	 */
+   public function setLocation(string $location)
    {
    	 $this->location = $location;
    }
@@ -85,11 +87,18 @@ class Scaleway  {
 			}
 	}
 
-
-   public function getServers()
+	/**
+	 * set the location of servers
+	 * ex: paris / amsterdam
+	 * @param $location
+	 *
+	 * @return mixed
+	 */
+   public function getServers(string $location = 'paris')
    {
 		try
 		{
+			$this->setLocation($location);
 			$url = $this->getLocation() . '/servers';
 			
 			$header = array('content-type'=>'application/json', 'x-auth-token' => $this->token);
