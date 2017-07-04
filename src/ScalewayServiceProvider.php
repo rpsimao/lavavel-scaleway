@@ -13,16 +13,14 @@ class ScalewayServiceProvider extends ServiceProvider
      *
      * @var bool
      */
-    protected $defer = false;
+    protected $defer = true;
 
     /**
      * Bootstrap the application events.
      *
      * @return void
      */
-    public function boot()
-    {
-    }
+    public function boot() {}
 
     /**
      * Register the service provider.
