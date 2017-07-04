@@ -1,11 +1,11 @@
 <?php
 
-namespace rpsimao\Scaleway;
+namespace rpsimao\ScalewayRPS;
 
 use Illuminate\Support\ServiceProvider;
 use \Config as Config;
 
-class ScalewayServiceProvider extends ServiceProvider
+class RPSScalewayServiceProvider extends ServiceProvider
 {
 
     /**
@@ -35,7 +35,7 @@ class ScalewayServiceProvider extends ServiceProvider
 	    $this->app->alias(Scaleway::class, 'Scaleway');*/
 
 	    $this->app->bind('scaleway', function(){
-		    return new Scaleway(config('services.scaleway.token'));
+		    return new RPSScaleway(config('services.scaleway.token'));
 	    });
     }
 

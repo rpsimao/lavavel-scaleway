@@ -1,12 +1,12 @@
 <?php
 
-namespace rpsimao\Scaleway;
+namespace rpsimao\ScalewayRPS;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\Request;
 
-class Scaleway  {
+class RPSScaleway  {
 
    
 	protected $token;
