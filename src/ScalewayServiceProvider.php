@@ -1,6 +1,6 @@
 <?php
 
-namespace rpsimao\LaravelScaleway;
+namespace rpsimao\Scaleway;
 
 use Illuminate\Support\ServiceProvider;
 use \Config as Config;
