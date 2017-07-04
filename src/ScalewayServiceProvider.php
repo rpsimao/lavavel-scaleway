@@ -3,7 +3,7 @@
 namespace rpsimao\ScalewayRPS;
 
 use Illuminate\Support\ServiceProvider;
-use \Config as Config;
+
 
 class RPSScalewayServiceProvider extends ServiceProvider
 {
@@ -29,14 +29,12 @@ class RPSScalewayServiceProvider extends ServiceProvider
      */
     public function register()
     {
-	    /*$this->app->singleton(Scaleway::class, function () {
-		    return new Scaleway(config('services.scaleway.token'));
-	    });
-	    $this->app->alias(Scaleway::class, 'Scaleway');*/
-
-	    $this->app->bind('scaleway', function(){
+	    $this->app->singleton(RPSScaleway::class, function () {
 		    return new RPSScaleway(config('services.scaleway.token'));
 	    });
+	    $this->app->alias(RPSScaleway::class, 'scaleway');
+
+
     }
 
     /**
@@ -46,8 +44,8 @@ class RPSScalewayServiceProvider extends ServiceProvider
      */
     public function provides()
     {
-        //return [Scaleway::class, 'Scaleway'];
-	    return ['scaleway'];
+        return [Scaleway::class, 'scaleway'];
+	    //return ['scaleway'];
     }
 
 }
