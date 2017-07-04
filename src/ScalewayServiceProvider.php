@@ -42,7 +42,7 @@ class ScalewayServiceProvider extends ServiceProvider
      */
     public function provides()
     {
-        return ['rpsscaleway'];
+        return [Scaleway::class, 'rpsscaleway'];
     }
 
 }
