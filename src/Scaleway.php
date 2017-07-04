@@ -36,10 +36,8 @@ class Scaleway  {
 
    private function getLocation()
    {
-
-
    		switch ($this->location) {
-   			case 'paris': 
+   			case 'paris':
    				return self::PAR_CENTER;
    				break;
 
@@ -52,19 +50,50 @@ class Scaleway  {
    				break;
    		}
 
-   		return $this->location;
-
    }
+
+	public function StatusCodeHandling($e)
+	{
+		if ($e->getResponse()->getStatusCode() == '400')
+			{
+				$this->prepare_access_token();
+			}
+			elseif ($e->getResponse()->getStatusCode() == '422')
+			{
+				$response = json_decode($e->getResponse()->getBody(true)->getContents());
+				return $response;
+			}
+			elseif ($e->getResponse()->getStatusCode() == '500')
+			{
+				$response = json_decode($e->getResponse()->getBody(true)->getContents());
+				return $response;
+			}
+			elseif ($e->getResponse()->getStatusCode() == '401')
+			{
+				$response = json_decode($e->getResponse()->getBody(true)->getContents());
+				return $response;
+			}
+			elseif ($e->getResponse()->getStatusCode() == '403')
+			{
+				$response = json_decode($e->getResponse()->getBody(true)->getContents());
+				return $response;
+			}
+			else
+			{
+				$response = json_decode($e->getResponse()->getBody(true)->getContents());
+				return $response;
+			}
+	}
 
 
    public function getServers()
    {
 		try
 		{
-			$url = $this->getLocation . '/server';
+			$url = $this->getLocation() . '/server';
 			
 			$header = array('content-type'=>'application/json', 'x-auth-token' => $this->token);
-			$response = $this->client->get($url, array(‘headers’ => $header));
+			$response = $this->client->get($url, array('headers' => $header));
 			$result = $response->getBody()->getContents();
 			return $result;
 		}

@@ -34,7 +34,7 @@ class LaravelScalewayServiceProvider extends ServiceProvider
         $this->app->bind('scaleway', function () {
             $token = $this->app['config']->get('services.scaleway.token', null);
 
-            return new LaravelScaleway($token);
+            return new Scaleway($token);
         });
     }
 
