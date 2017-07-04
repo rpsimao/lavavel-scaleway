@@ -18,7 +18,7 @@ class Scaleway  {
 
 	protected $location;
 
-   	public function __construct($token){
+   	public function __construct($token = null){
 
    		$this->token = $token;
 
@@ -90,12 +90,11 @@ class Scaleway  {
    {
 		try
 		{
-			$url = $this->getLocation() . '/server';
+			$url = $this->getLocation() . '/servers';
 			
 			$header = array('content-type'=>'application/json', 'x-auth-token' => $this->token);
 			$response = $this->client->get($url, array('headers' => $header));
-			$result = $response->getBody()->getContents();
-			return $result;
+			return $response->getBody()->getContents();
 		}
 		catch (RequestException $e)
 		{
