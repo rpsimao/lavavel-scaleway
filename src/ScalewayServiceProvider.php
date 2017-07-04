@@ -34,7 +34,7 @@ class ScalewayServiceProvider extends ServiceProvider
 	    });
 	    $this->app->alias(Scaleway::class, 'Scaleway');*/
 
-	    $this->app->bind('Scaleway', function(){
+	    $this->app->bind('scaleway', function(){
 		    return new Scaleway(config('services.scaleway.token'));
 	    });
     }
@@ -47,7 +47,7 @@ class ScalewayServiceProvider extends ServiceProvider
     public function provides()
     {
         //return [Scaleway::class, 'Scaleway'];
-	    return ['Scaleway'];
+	    return ['scaleway'];
     }
 
 }

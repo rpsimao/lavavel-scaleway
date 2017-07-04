@@ -1,15 +1,15 @@
 <?php
 
-namespace rpsimao\Scaleway;
+namespace rpsimao\Scaleway\Facade;
 
 use Illuminate\Support\Facades\Facade;
 
-class ScalewayFacade extends Facade {
+class Scaleway extends Facade {
 
     /**
      * Get the registered name of the component.
      *
      * @return string
      */
-    protected static function getFacadeAccessor() { return 'Scaleway'; }
+    protected static function getFacadeAccessor() { return 'scaleway'; }
 }
