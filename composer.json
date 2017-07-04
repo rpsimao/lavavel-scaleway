@@ -1,0 +1,17 @@
+{
+    "name": "rpsimao/laravel-scaleway",
+    "type": "library",
+    "description" : "Library for interacting with the Scaleway REST API",
+    "keywords": ["laravel", "rest", "scaleway"],
+    "homepage": "https://github.com/rpsimao/laravel-scaleway",
+    "license": "MIT",
+    "require": {
+        "php": ">=5.5",
+        "ext-curl": "*",
+        "guzzlehttp/guzzle": "~6.0"
+
+    },
+    "autoload": {
+        "classmap": [ "src/" ]
+    }
+}
