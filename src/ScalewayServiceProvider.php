@@ -5,7 +5,7 @@ namespace rpsimao\LaravelScaleway;
 use Illuminate\Support\ServiceProvider;
 use \Config as Config;
 
-class LaravelScalewayServiceProvider extends ServiceProvider
+class ScalewayServiceProvider extends ServiceProvider
 {
 
     /**
