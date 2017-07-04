@@ -11,5 +11,5 @@ class ScalewayFacade extends Facade {
      *
      * @return string
      */
-    protected static function getFacadeAccessor() { return 'scaleway'; }
+    protected static function getFacadeAccessor() { return 'rpsscaleway'; }
 }

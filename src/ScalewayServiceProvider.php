@@ -29,7 +29,7 @@ class ScalewayServiceProvider extends ServiceProvider
      */
     public function register()
     {
-	    $this->app->singleton('scaleway', function () {
+	    $this->app->singleton('rpsscaleway', function () {
 		    return new Scaleway(config('services.scaleway.token'));
 	    });
     }
@@ -41,7 +41,7 @@ class ScalewayServiceProvider extends ServiceProvider
      */
     public function provides()
     {
-        return ['scaleway'];
+        return ['rpsscaleway'];
     }
 
 }
