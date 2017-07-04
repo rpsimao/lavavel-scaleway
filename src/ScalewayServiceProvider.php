@@ -29,11 +29,9 @@ class ScalewayServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind('scaleway', function () {
-            $token = $this->app['config']->get('services.scaleway.token', null);
-
-            return new Scaleway($token);
-        });
+	    $this->app->singleton('scaleway', function () {
+		    return new Scaleway(config('services.scaleway.token'));
+	    });
     }
 
     /**
